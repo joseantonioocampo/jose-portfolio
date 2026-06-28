@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --acc: #D97757;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #F2F0E8;
+    color: #28261F;
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+}
+
+@layer components {
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+  .sec { padding: 104px 0; border-top: 1px solid #E5E0D4; scroll-margin-top: 80px; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: .2em;
+    text-transform: uppercase; color: var(--acc);
+  }
+  .h1 {
+    font-family: 'Newsreader', serif; font-weight: 400;
+    font-size: clamp(40px, 6vw, 74px); line-height: 1.05;
+    letter-spacing: -.01em; margin: 0;
+  }
+  .h2 {
+    font-family: 'Newsreader', serif; font-weight: 400;
+    font-size: clamp(30px, 4vw, 46px); line-height: 1.08;
+    margin: 0; letter-spacing: -.01em;
+  }
+  .lead {
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: #565248; max-width: 580px;
+  }
+  .serif { font-family: 'Newsreader', serif; font-weight: 400; }
+  .ital { font-style: italic; }
+  .acc { color: var(--acc); }
+  .muted { color: #75706A; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .12em;
+    text-transform: uppercase; color: #847E72;
+  }
+  .lk {
+    color: var(--acc);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    border-bottom: 1px solid transparent;
+    transition: .15s;
+  }
+  .lk:hover { border-bottom-color: var(--acc); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    height: 46px; padding: 0 22px; border-radius: 10px;
+    font-size: 15px; font-weight: 600; cursor: pointer;
+    transition: .15s; white-space: nowrap;
+  }
+  .btnsm { height: 40px; padding: 0 18px; font-size: 14px; border-radius: 9px; }
+  .btnp { background: var(--acc); color: #FFF8F2; border: 1px solid transparent; }
+  .btnp:hover { filter: brightness(1.05); }
+  .btng { border: 1px solid #D7D1C4; color: #28261F; background: transparent; }
+  .btng:hover { border-color: #B9B2A2; background: #EAE7DD; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 1px solid #E0DBCE;
+    border-radius: 999px; background: #FBFAF4;
+    font-size: 13px; color: #565248;
+  }
+  .card {
+    background: #FFFFFF; border: 1px solid #E5E0D4;
+    border-radius: 16px;
+  }
+  .metric {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; color: #565248;
+    border: 1px solid #E2DDD0; border-radius: 7px;
+    padding: 6px 10px; background: #FBFAF4;
+  }
+  .navlink {
+    font-size: 14px; color: #6E685D;
+    transition: color .15s;
+  }
+  .navlink:hover { color: #28261F; }
+  .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--acc); display: inline-block;
+  }
+  .shimmer {
+    background: linear-gradient(100deg, var(--acc) 0%, color-mix(in srgb, var(--acc) 55%, #caa) 45%, var(--acc) 60%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: sweep 5.5s ease-in-out infinite;
+  }
+  .aura {
+    position: absolute; z-index: 0;
+    width: 520px; height: 520px;
+    right: -80px; top: -120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--acc) 32%, transparent), transparent 68%);
+    filter: blur(18px); opacity: .55;
+    pointer-events: none;
+    animation: float 9s ease-in-out infinite;
+  }
+  .ph {
+    background: repeating-linear-gradient(135deg, #E8E4D8 0 11px, #F2F0E8 11px 22px);
+    border: 1px dashed #CFC9BB;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .phlab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: .16em;
+    text-transform: uppercase; color: #908A7E;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 880px) {
+  .sec { padding: 76px 0; }
+  .hidesm { display: none !important; }
+  .aura { width: 340px; height: 340px; right: -60px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
