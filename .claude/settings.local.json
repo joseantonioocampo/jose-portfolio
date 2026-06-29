@@ -31,7 +31,9 @@
       "Bash(python -c \"import fitz; print\\('fitz', fitz.VersionBind\\)\")",
       "Bash(python -c ' *)",
       "Bash(python -m pip install --quiet Pillow)",
-      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Galeria depurada + foto familiar + animaciones estilo Apple *)"
+      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Galeria depurada + foto familiar + animaciones estilo Apple *)",
+      "PowerShell(Start-Process \"http://localhost:8081/\")",
+      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Mi Historia: narrativa completa por capitulos + manifiesto y dedicatoria *)"
     ]
   }
 }
