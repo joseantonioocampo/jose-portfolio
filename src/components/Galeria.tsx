@@ -6,12 +6,9 @@ const items: GaleriaItem[] = [
   { id: 'discurso', label: 'Discurso de graduación', caption: 'Valedictorian · Discurso de graduación', src: '/discurso.jpg' },
   { id: 'nyc', label: 'TrepCamp · Nueva York', caption: 'TrepCamp NYC · 2024', src: '/NYC.JPEG' },
   { id: 'orquesta', label: 'Orquesta · Auditorio Nacional', caption: 'Iberorquestas · Auditorio Nacional', src: '/Iberorquestas.jpg' },
-  { id: 'equipo', label: 'Innovation Advisory', caption: 'Innovation Advisory · Equipo', src: '/equipo.jpg' },
   { id: 'met', label: 'Nueva York · The Met', caption: 'Nueva York · The Met', src: '/met-nyc.jpg' },
   { id: 'valedictorian', label: 'Graduación · Valedictorian', caption: 'Valedictorian · Tecmilenio', src: '/foto-2.jpg' },
-  { id: 'lideres', label: 'Líderes estudiantiles', caption: 'Líderes · Enactus México', src: '/lideres.jpg' },
-  { id: 'reconocimiento', label: 'Reconocimiento', caption: 'Reconocimiento · Emprendimiento', src: '/reconocimiento.jpg' },
-  { id: 'hackathon', label: 'Hackathon IA', caption: 'Hackathon · Inteligencia Artificial', src: '/foto-3.jpg' }
+  { id: 'familia', label: 'Familia', caption: 'Familia · El origen de todo', src: '/familia.jpg' }
 ];
 
 export default function Galeria() {

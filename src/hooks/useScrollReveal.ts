@@ -9,7 +9,7 @@ import { useEffect } from 'react';
  */
 export function useScrollReveal() {
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
+    const els = Array.from(document.querySelectorAll<HTMLElement>('.reveal, .app-reveal'));
     if (els.length === 0) return;
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

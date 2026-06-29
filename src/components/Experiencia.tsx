@@ -76,8 +76,8 @@ export default function Experiencia() {
           {items.map((e, i) => (
             <div
               key={e.title + e.company}
-              className="card reveal"
-              style={{ padding: '26px 28px', marginBottom: 14, transitionDelay: `${i * 55}ms` }}
+              className="card app-reveal"
+              style={{ padding: '26px 28px', marginBottom: 14, transitionDelay: `${i * 70}ms` }}
             >
               <div className="flex justify-between flex-wrap gap-3" style={{ alignItems: 'baseline' }}>
                 <div>

@@ -183,6 +183,22 @@
     opacity: 1;
     transform: none;
   }
+  /* Apple-style entrance: rises, scales up and sharpens from a blur. */
+  .app-reveal {
+    opacity: 0;
+    transform: translateY(48px) scale(.94);
+    filter: blur(10px);
+    transition:
+      opacity 1s cubic-bezier(.16, 1, .3, 1),
+      transform 1.1s cubic-bezier(.16, 1, .3, 1),
+      filter .9s cubic-bezier(.16, 1, .3, 1);
+    will-change: opacity, transform, filter;
+  }
+  .app-reveal.in {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
   .gphoto {
     overflow: hidden;
     border-radius: 14px;
@@ -206,5 +222,9 @@
     animation: none !important;
     transition: none !important;
   }
-  .reveal { opacity: 1 !important; transform: none !important; }
+  .reveal, .app-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }

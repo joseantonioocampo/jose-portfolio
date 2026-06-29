@@ -51,7 +51,7 @@ export default function Proyectos() {
         </div>
 
         <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
-          <article className="card flex flex-col reveal" style={{ padding: 26 }}>
+          <article className="card flex flex-col app-reveal" style={{ padding: 26 }}>
             <Placeholder
               label="Captura de Benie / CalHR"
               style={{ width: '100%', height: 188, marginBottom: 22 }}
@@ -82,7 +82,7 @@ export default function Proyectos() {
             </div>
           </article>
 
-          <article className="card flex flex-col reveal" style={{ padding: 26, transitionDelay: '100ms' }}>
+          <article className="card flex flex-col app-reveal" style={{ padding: 26, transitionDelay: '120ms' }}>
             <Placeholder
               label="Foto del TrepCamp NYC"
               src="/NYC.JPEG"
