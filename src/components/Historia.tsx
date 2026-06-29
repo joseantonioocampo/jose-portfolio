@@ -11,7 +11,7 @@ const rows: Row[] = [
     year: '2018',
     title: 'Salto de fe',
     body:
-      'Una beca del 90% y la orquesta Sonemos lo hicieron posible. Tuve formación directa de Arturo Márquez —ganador de varios Latin Grammy— y representé a México con Iberorquestas Juveniles ante 12 países.'
+      'Una beca del 90% y la orquesta Sonemos —que hasta me prestó los instrumentos— lo hicieron posible. Pasé de aprendiz a principal de mi sección, con formación directa de Arturo Márquez, ganador de varios Latin Grammy. Toqué en Los Pinos y el Festival Cervantino, y representé a México ante 12 países con Iberorquestas Juveniles.'
   },
   {
     year: '2020',
@@ -102,6 +102,31 @@ export default function Historia() {
             </div>
           ))}
         </div>
+
+        <figure
+          className="reveal"
+          style={{
+            maxWidth: 780,
+            margin: '56px 0 0',
+            paddingLeft: 28,
+            borderLeft: '3px solid var(--acc)'
+          }}
+        >
+          <blockquote
+            className="serif ital"
+            style={{
+              fontSize: 'clamp(22px, 2.7vw, 31px)',
+              lineHeight: 1.32,
+              margin: 0,
+              color: '#28261F'
+            }}
+          >
+            «Toda la vida vas a trabajar, pero solo una vez dirás que fuiste embajador.»
+          </blockquote>
+          <figcaption className="tag" style={{ marginTop: 16 }}>
+            — Mi mamá
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

@@ -13,7 +13,16 @@
       "Bash(git remote *)",
       "Bash(git push *)",
       "PowerShell(Start-Process \"http://localhost:8080/\")",
-      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Animaciones profesionales: scroll-reveal, scrollspy, barra de progreso y contadores *)"
+      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Animaciones profesionales: scroll-reveal, scrollspy, barra de progreso y contadores *)",
+      "Bash(ls -la public/*.pdf)",
+      "Bash(ls -la *.tsbuildinfo)",
+      "Bash(pdfinfo \"public/mi-historia.pdf\")",
+      "Bash(pdftotext -layout \"public/mi-historia.pdf\" \"C:/Users/NOEMIO~1/AppData/Local/Temp/claude/C--Users-Noemi-Ocampo-Downloads-Prototipo-de-portfolio-moderno-portfolio-lovable/f67b76e4-2eac-4754-8e74-31f1f0eea27c/scratchpad/historia.txt\")",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(pdftotext -layout \"public/mi-historia.pdf\" \"historia_tmp.txt\")",
+      "Bash(rm -f historia_tmp.txt)",
+      "Bash(git rm *)",
+      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Enriquecer contenido con la historia real + limpieza de repo *)"
     ]
   }
 }

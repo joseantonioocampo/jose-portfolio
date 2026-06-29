@@ -4,8 +4,14 @@ const otrosProyectos = [
   {
     title: 'Pravia CRM — CalOES (CALSIC)',
     desc:
-      'CRM inteligente con Power Apps, Dataverse, Power Automate, Power Pages, ArcGIS y Azure OpenAI. Diseñé el CI/CD con Azure DevOps y GitHub Actions.',
+      'CRM inteligente de ciberseguridad que automatizó ~60% de los flujos de incidentes, con Power Apps, Dataverse, Power Automate, Power Pages, ArcGIS y Azure OpenAI. Diseñé el CI/CD con Azure DevOps y GitHub Actions.',
     tag: 'Power Platform'
+  },
+  {
+    title: 'Bochón × ESPN — IA en vivo',
+    desc:
+      'IA aplicada a transmisiones deportivas en vivo: estadísticas para los espectadores en menos de 2 segundos, al aire junto a los locutores.',
+    tag: 'Realtime AI · Media'
   },
   {
     title: 'CCHCS AI Assistant',
