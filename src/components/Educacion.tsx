@@ -1,59 +1,52 @@
-const certificados = [
-  'AWS · AI Use Cases',
-  'AWS · ML & AI Fundamentals',
-  'Microsoft Power Platform App Maker Associate',
-  'Lean Six Sigma Green Belt',
-  'Six Sigma Yellow Belt',
-  'EF SET English · B2',
-  'Google · Project Initiation',
-  'Java · LinkedIn'
-];
+import { useLang } from '../i18n';
+import { content } from '../content';
 
 export default function Educacion() {
+  const { lang } = useLang();
+  const c = content[lang].educacion;
   return (
     <section id="educacion" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4 reveal">Educación</div>
+        <div className="eyebrow mb-4 reveal">{c.eyebrow}</div>
         <h2 className="h2 reveal" style={{ marginBottom: 48 }}>
-          Formación
+          {c.h2}
         </h2>
         <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
           <div className="card reveal" style={{ padding: 28 }}>
-            <span className="tag">2026 — Actualidad</span>
+            <span className="tag">{c.card1.tag}</span>
             <h3 className="serif" style={{ fontSize: 23, margin: '10px 0 4px' }}>
-              Maestría en Business Analytics
+              {c.card1.title}
             </h3>
             <div className="acc" style={{ fontWeight: 600, marginBottom: 10 }}>
-              EGADE Business School · Tec de Monterrey
+              {c.card1.school}
             </div>
             <p className="muted" style={{ margin: 0 }}>
-              Negocio + datos: del modelo analítico a la decisión de alto impacto.
+              {c.card1.body}
             </p>
           </div>
           <div className="card reveal" style={{ padding: 28, transitionDelay: '90ms' }}>
-            <span className="tag">2020 — 2024</span>
+            <span className="tag">{c.card2.tag}</span>
             <h3 className="serif" style={{ fontSize: 23, margin: '10px 0 4px' }}>
-              Ing. en Mecatrónica, Robótica y Electrónica
+              {c.card2.title}
             </h3>
             <div className="acc" style={{ fontWeight: 600, marginBottom: 10 }}>
-              Universidad Tecmilenio
+              {c.card2.school}
             </div>
             <p className="muted" style={{ margin: 0 }}>
-              Valedictorian · Lean Six Sigma Green Belt · Becario por propósito (2.ª
-              generación) · Enactus México.
+              {c.card2.body}
             </p>
           </div>
         </div>
 
         <div className="reveal" style={{ marginTop: 44 }}>
           <div className="flex items-center gap-3" style={{ marginBottom: 14 }}>
-            <span className="tag">Certificaciones</span>
-            <span className="metric">16 en total</span>
+            <span className="tag">{c.certsTag}</span>
+            <span className="metric">{c.certsCount}</span>
           </div>
           <div className="flex flex-wrap gap-[10px]">
-            {certificados.map((c) => (
-              <span key={c} className="chip">
-                {c}
+            {c.certificados.map((cert) => (
+              <span key={cert} className="chip">
+                {cert}
               </span>
             ))}
           </div>
@@ -61,11 +54,14 @@ export default function Educacion() {
 
         <div className="reveal" style={{ marginTop: 36 }}>
           <div className="tag" style={{ marginBottom: 14 }}>
-            Idiomas
+            {c.idiomasTag}
           </div>
           <div className="flex flex-wrap gap-[10px]">
-            <span className="chip">Español · Nativo</span>
-            <span className="chip">Inglés · Competencia profesional (B2)</span>
+            {c.idiomas.map((idioma) => (
+              <span key={idioma} className="chip">
+                {idioma}
+              </span>
+            ))}
           </div>
         </div>
       </div>

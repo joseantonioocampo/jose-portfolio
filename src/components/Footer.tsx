@@ -1,4 +1,9 @@
+import { useLang } from '../i18n';
+import { content } from '../content';
+
 export default function Footer() {
+  const { lang } = useLang();
+  const c = content[lang].footer;
   return (
     <footer
       style={{
@@ -15,7 +20,7 @@ export default function Footer() {
             José Antonio Ocampo Cervantes
           </span>
         </span>
-        <span>© 2026 · Cuernavaca, México · Construido con alma</span>
+        <span>{c.text}</span>
       </div>
     </footer>
   );

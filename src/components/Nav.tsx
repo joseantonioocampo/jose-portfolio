@@ -1,17 +1,12 @@
 import { useScrollSpy } from '../hooks/useScrollSpy';
-
-const links = [
-  { href: '#historia', label: 'Historia' },
-  { href: '#proyectos', label: 'Proyectos' },
-  { href: '#experiencia', label: 'Experiencia' },
-  { href: '#educacion', label: 'Educación' },
-  { href: '#logros', label: 'Logros' },
-  { href: '#galeria', label: 'Galería' },
-  { href: '#contacto', label: 'Contacto' }
-];
+import { useLang } from '../i18n';
+import { content } from '../content';
 
 export default function Nav() {
-  const active = useScrollSpy(links.map((l) => l.href.slice(1)));
+  const { lang, setLang } = useLang();
+  const c = content[lang];
+  const active = useScrollSpy(c.nav.links.map((l) => l.href.slice(1)));
+
   return (
     <nav
       style={{
@@ -32,7 +27,7 @@ export default function Nav() {
           </span>
         </a>
         <div className="flex items-center gap-6 hidesm">
-          {links.map((l) => (
+          {c.nav.links.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -42,9 +37,29 @@ export default function Nav() {
             </a>
           ))}
         </div>
-        <a href="#contacto" className="btn btnp btnsm">
-          Hablemos
-        </a>
+        <div className="flex items-center gap-3">
+          <div className="langtoggle" role="group" aria-label="Language">
+            <button
+              type="button"
+              className={`langopt${lang === 'es' ? ' active' : ''}`}
+              aria-pressed={lang === 'es'}
+              onClick={() => setLang('es')}
+            >
+              ES
+            </button>
+            <button
+              type="button"
+              className={`langopt${lang === 'en' ? ' active' : ''}`}
+              aria-pressed={lang === 'en'}
+              onClick={() => setLang('en')}
+            >
+              EN
+            </button>
+          </div>
+          <a href="#contacto" className="btn btnp btnsm">
+            {c.nav.cta}
+          </a>
+        </div>
       </div>
     </nav>
   );

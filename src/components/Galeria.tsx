@@ -1,37 +1,29 @@
 import Placeholder from './Placeholder';
-
-type GaleriaItem = { id: string; label: string; caption: string; src?: string };
-
-const items: GaleriaItem[] = [
-  { id: 'discurso', label: 'Discurso de graduación', caption: 'Valedictorian · Discurso de graduación', src: '/discurso.jpg' },
-  { id: 'nyc', label: 'TrepCamp · Nueva York', caption: 'TrepCamp NYC · 2024', src: '/NYC.JPEG' },
-  { id: 'orquesta', label: 'Orquesta · Auditorio Nacional', caption: 'Iberorquestas · Auditorio Nacional', src: '/Iberorquestas.jpg' },
-  { id: 'met', label: 'Nueva York · The Met', caption: 'Nueva York · The Met', src: '/met-nyc.jpg' },
-  { id: 'valedictorian', label: 'Graduación · Valedictorian', caption: 'Valedictorian · Tecmilenio', src: '/foto-2.jpg' },
-  { id: 'familia', label: 'Familia', caption: 'Familia · El origen de todo', src: '/familia.jpg' }
-];
+import { useLang } from '../i18n';
+import { content } from '../content';
 
 export default function Galeria() {
+  const { lang } = useLang();
+  const c = content[lang].galeria;
   return (
     <section id="galeria" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4 reveal">Galería</div>
+        <div className="eyebrow mb-4 reveal">{c.eyebrow}</div>
         <h2 className="h2 reveal" style={{ marginBottom: 14 }}>
-          Momentos del camino
+          {c.h2}
         </h2>
         <p className="lead reveal" style={{ marginBottom: 48 }}>
-          Del escenario al código: los momentos que han marcado el camino —
-          orquesta, graduación, Nueva York y el trabajo con equipos internacionales.
+          {c.lead}
         </p>
         <div
           className="grid gap-[18px]"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}
         >
-          {items.map((g, i) => (
+          {c.items.map((g, i) => (
             <div key={g.id} className="reveal" style={{ transitionDelay: `${i * 70}ms` }}>
               <div className="gphoto" style={{ height: 220 }}>
                 <Placeholder
-                  label={g.label}
+                  label={g.caption}
                   src={g.src}
                   style={{ width: '100%', height: '100%' }}
                 />

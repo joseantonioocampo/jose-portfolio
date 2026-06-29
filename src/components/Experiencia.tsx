@@ -1,79 +1,18 @@
-type Exp = {
-  range: string;
-  title: string;
-  company: string;
-  meta: string;
-  body: string;
-};
-
-const items: Exp[] = [
-  {
-    range: '2026 — Hoy',
-    title: 'AI Engineer · Advisory Associate',
-    company: 'PwC Acceleration Centers',
-    meta: 'CDMX · Híbrido',
-    body:
-      'AI Engineer en CT&I, construyendo soluciones de inteligencia artificial a escala global y colaborando con equipos en Shanghái y Asia dentro de una de las Big Four.'
-  },
-  {
-    range: '2025 — Hoy',
-    title: 'CEO & Co-Founder',
-    company: 'JOYU',
-    meta: 'Cuernavaca',
-    body:
-      'Mi propia empresa: manufactura de MDF, llevando producto, operación y visión de negocio de cero a mercado.'
-  },
-  {
-    range: '2026 — Hoy',
-    title: 'Profesor de Cátedra',
-    company: 'Universidad Tecmilenio',
-    meta: 'Cuernavaca',
-    body:
-      'Comparto con la siguiente generación lo aprendido en IA, tecnología y emprendimiento.'
-  },
-  {
-    range: '2023 — 2025',
-    title: 'Director of Development Applications',
-    company: 'Innovation Advisory Consulting',
-    meta: 'Power Platform · Azure AI · LLMs',
-    body:
-      'De AI & Power Platform Developer (Sacramento, CA) a Director de Desarrollo: definí estrategia técnica y lideré el primer chatbot de IA del sector público en CalHR, el CRM Pravia para CalOES, el asistente de IA del CCHCS y la iniciativa Agent & AI Realtime para la Governor\'s Office.'
-  },
-  {
-    range: '2021 — 2023',
-    title: 'Developer',
-    company: 'Digital NAO',
-    meta: 'Monterrey',
-    body:
-      'Proyectos de innovación y automatización en TI: generación de certificados, chatbots y mejoras de producto para elevar la eficiencia.'
-  }
-];
-
-const capacidades = [
-  {
-    label: 'IA & GenAI',
-    chips: ['Azure OpenAI', 'Azure AI Search', 'Copilot Studio', 'LLMs · Agentes', 'Visión computarizada']
-  },
-  {
-    label: 'Microsoft Power Platform',
-    chips: ['Power Apps', 'Power Automate', 'Power Pages', 'Dataverse', 'Power BI']
-  },
-  {
-    label: 'Full Stack & Cloud',
-    chips: ['React.js', 'Python', 'Azure Functions', 'Azure DevOps', 'GitHub Actions']
-  }
-];
+import { useLang } from '../i18n';
+import { content } from '../content';
 
 export default function Experiencia() {
+  const { lang } = useLang();
+  const c = content[lang].experiencia;
   return (
     <section id="experiencia" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4 reveal">Experiencia</div>
+        <div className="eyebrow mb-4 reveal">{c.eyebrow}</div>
         <h2 className="h2 reveal" style={{ marginBottom: 48 }}>
-          Dónde he construido
+          {c.h2}
         </h2>
         <div style={{ maxWidth: 840 }}>
-          {items.map((e, i) => (
+          {c.items.map((e, i) => (
             <div
               key={e.title + e.company}
               className="card app-reveal"
@@ -100,19 +39,19 @@ export default function Experiencia() {
 
         <div style={{ marginTop: 56 }}>
           <div className="tag reveal" style={{ marginBottom: 18 }}>
-            Capacidades
+            {c.capacidadesTag}
           </div>
           <div
             className="grid gap-6"
             style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}
           >
-            {capacidades.map((c, i) => (
-              <div key={c.label} className="reveal" style={{ transitionDelay: `${i * 70}ms` }}>
+            {c.capacidades.map((cap, i) => (
+              <div key={cap.label} className="reveal" style={{ transitionDelay: `${i * 70}ms` }}>
                 <div className="serif" style={{ fontSize: 18, marginBottom: 12 }}>
-                  {c.label}
+                  {cap.label}
                 </div>
                 <div className="flex flex-wrap gap-[10px]">
-                  {c.chips.map((ch) => (
+                  {cap.chips.map((ch) => (
                     <span key={ch} className="chip">
                       {ch}
                     </span>

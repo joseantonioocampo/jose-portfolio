@@ -128,6 +128,30 @@
   }
   .navlink.active { color: #28261F; }
   .navlink.active::after { right: 0; }
+  .langtoggle {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #D7D1C4;
+    border-radius: 999px;
+    overflow: hidden;
+    background: #FBFAF4;
+  }
+  .langopt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: .06em;
+    padding: 7px 11px;
+    color: #6E685D;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color .2s, background .2s;
+  }
+  .langopt:hover { color: #28261F; }
+  .langopt.active {
+    background: var(--acc);
+    color: #FFF8F2;
+  }
   .scrollprogress {
     position: fixed;
     top: 0; left: 0;

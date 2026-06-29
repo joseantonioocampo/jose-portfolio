@@ -1,38 +1,19 @@
 import CountUp from './CountUp';
-
-type Stat = { value: number; prefix?: string; decimals?: number; suffix: string; label: string };
-
-const stats: Stat[] = [
-  { value: 1.5, prefix: '$', decimals: 1, suffix: 'M', label: 'Inversión aprox. de Microsoft en InnAdvisory' },
-  { value: 80, suffix: '%', label: 'Consultas resueltas por Benie sin humanos' },
-  { value: 11, suffix: '/14K', label: 'Seleccionado para el TrepCamp en Nueva York' },
-  { value: 16, suffix: '', label: 'Certificaciones profesionales (AWS, Microsoft…)' }
-];
-
-const reconocimientos = [
-  'Valedictorian · Ing. Mecatrónica',
-  'Halcón de Oro en Arte y Cultura · Tecmilenio',
-  '2.º lugar · Be Preneur Challenge (Finalista Nacional)',
-  'Iberorquestas Juveniles · 1 de 11 representantes de México'
-];
-
-const prensa = [
-  'Tecmilenio — IA y emprendimiento',
-  'LinkedIn — De Cuernavaca a Nueva York',
-  'PLAYERS of Life',
-  'Conecta · Tec de Monterrey'
-];
+import { useLang } from '../i18n';
+import { content } from '../content';
 
 export default function Logros() {
+  const { lang } = useLang();
+  const c = content[lang].logros;
   return (
     <section id="logros" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4 reveal">Logros</div>
+        <div className="eyebrow mb-4 reveal">{c.eyebrow}</div>
         <h2 className="h2 reveal" style={{ marginBottom: 48 }}>
-          Hitos que valieron la pena
+          {c.h2}
         </h2>
         <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
-          {stats.map((s, i) => (
+          {c.stats.map((s, i) => (
             <div
               key={s.label}
               className="reveal"
@@ -66,10 +47,10 @@ export default function Logros() {
 
         <div className="reveal" style={{ marginTop: 44 }}>
           <div className="tag" style={{ marginBottom: 14 }}>
-            Reconocimientos
+            {c.reconocimientosTag}
           </div>
           <div className="flex flex-wrap gap-[10px]">
-            {reconocimientos.map((r) => (
+            {c.reconocimientos.map((r) => (
               <span key={r} className="chip">
                 <span className="acc">★</span> {r}
               </span>
@@ -79,10 +60,10 @@ export default function Logros() {
 
         <div className="reveal" style={{ marginTop: 36 }}>
           <div className="tag" style={{ marginBottom: 14 }}>
-            En prensa
+            {c.prensaTag}
           </div>
           <div className="flex flex-wrap gap-[10px]">
-            {prensa.map((p) => (
+            {c.prensa.map((p) => (
               <span key={p} className="chip">
                 {p}
               </span>
