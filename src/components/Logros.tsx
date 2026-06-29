@@ -1,8 +1,12 @@
-const stats = [
-  { num: '$1.5', suffix: 'M', label: 'Inversión aprox. de Microsoft en InnAdvisory' },
-  { num: '80', suffix: '%', label: 'Consultas resueltas por Benie sin humanos' },
-  { num: '11', suffix: '/14K', label: 'Seleccionado para el TrepCamp en Nueva York' },
-  { num: '16', suffix: '', label: 'Certificaciones profesionales (AWS, Microsoft…)' }
+import CountUp from './CountUp';
+
+type Stat = { value: number; prefix?: string; decimals?: number; suffix: string; label: string };
+
+const stats: Stat[] = [
+  { value: 1.5, prefix: '$', decimals: 1, suffix: 'M', label: 'Inversión aprox. de Microsoft en InnAdvisory' },
+  { value: 80, suffix: '%', label: 'Consultas resueltas por Benie sin humanos' },
+  { value: 11, suffix: '/14K', label: 'Seleccionado para el TrepCamp en Nueva York' },
+  { value: 16, suffix: '', label: 'Certificaciones profesionales (AWS, Microsoft…)' }
 ];
 
 const reconocimientos = [
@@ -23,19 +27,21 @@ export default function Logros() {
   return (
     <section id="logros" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4">Logros</div>
-        <h2 className="h2" style={{ marginBottom: 48 }}>
+        <div className="eyebrow mb-4 reveal">Logros</div>
+        <h2 className="h2 reveal" style={{ marginBottom: 48 }}>
           Hitos que valieron la pena
         </h2>
         <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
-          {stats.map((s) => (
+          {stats.map((s, i) => (
             <div
               key={s.label}
+              className="reveal"
               style={{
                 padding: '30px 22px',
                 border: '1px solid #E5E0D4',
                 borderRadius: 14,
-                background: '#FBFAF4'
+                background: '#FBFAF4',
+                transitionDelay: `${i * 80}ms`
               }}
             >
               <div
@@ -47,7 +53,7 @@ export default function Logros() {
                 }}
               >
                 <em className="acc" style={{ fontStyle: 'normal' }}>
-                  {s.num}
+                  <CountUp value={s.value} prefix={s.prefix} decimals={s.decimals} />
                 </em>
                 {s.suffix}
               </div>
@@ -58,7 +64,7 @@ export default function Logros() {
           ))}
         </div>
 
-        <div style={{ marginTop: 44 }}>
+        <div className="reveal" style={{ marginTop: 44 }}>
           <div className="tag" style={{ marginBottom: 14 }}>
             Reconocimientos
           </div>
@@ -71,7 +77,7 @@ export default function Logros() {
           </div>
         </div>
 
-        <div style={{ marginTop: 36 }}>
+        <div className="reveal" style={{ marginTop: 36 }}>
           <div className="tag" style={{ marginBottom: 14 }}>
             En prensa
           </div>

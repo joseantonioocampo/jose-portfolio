@@ -1,3 +1,5 @@
+import { useScrollReveal } from './hooks/useScrollReveal';
+import ScrollProgress from './components/ScrollProgress';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import Historia from './components/Historia';
@@ -10,8 +12,10 @@ import Contacto from './components/Contacto';
 import Footer from './components/Footer';
 
 export default function App() {
+  useScrollReveal();
   return (
     <div>
+      <ScrollProgress />
       <Nav />
       <Hero />
       <Historia />

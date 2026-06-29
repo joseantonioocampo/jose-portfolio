@@ -32,7 +32,7 @@ export default function Proyectos() {
     <section id="proyectos" className="sec">
       <div className="wrap">
         <div
-          className="flex items-center justify-between flex-wrap gap-4"
+          className="flex items-center justify-between flex-wrap gap-4 reveal"
           style={{ marginBottom: 48 }}
         >
           <div>
@@ -45,7 +45,7 @@ export default function Proyectos() {
         </div>
 
         <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
-          <article className="card flex flex-col" style={{ padding: 26 }}>
+          <article className="card flex flex-col reveal" style={{ padding: 26 }}>
             <Placeholder
               label="Captura de Benie / CalHR"
               style={{ width: '100%', height: 188, marginBottom: 22 }}
@@ -76,7 +76,7 @@ export default function Proyectos() {
             </div>
           </article>
 
-          <article className="card flex flex-col" style={{ padding: 26 }}>
+          <article className="card flex flex-col reveal" style={{ padding: 26, transitionDelay: '100ms' }}>
             <Placeholder
               label="Foto del TrepCamp NYC"
               src="/NYC.JPEG"
@@ -105,11 +105,11 @@ export default function Proyectos() {
           <div className="tag" style={{ marginBottom: 8 }}>
             Más proyectos de sector público · Innovation Advisory
           </div>
-          {otrosProyectos.map((p) => (
+          {otrosProyectos.map((p, i) => (
             <div
               key={p.title}
-              className="flex justify-between items-baseline gap-6"
-              style={{ padding: '22px 4px', borderTop: '1px solid #E5E0D4' }}
+              className="flex justify-between items-baseline gap-6 reveal"
+              style={{ padding: '22px 4px', borderTop: '1px solid #E5E0D4', transitionDelay: `${i * 60}ms` }}
             >
               <div>
                 <div className="serif" style={{ fontSize: 20 }}>

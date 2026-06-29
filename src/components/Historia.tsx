@@ -49,20 +49,20 @@ export default function Historia() {
   return (
     <section id="historia" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4">Mi historia</div>
-        <h2 className="h2" style={{ maxWidth: 680, marginBottom: 14 }}>
+        <div className="eyebrow mb-4 reveal">Mi historia</div>
+        <h2 className="h2 reveal" style={{ maxWidth: 680, marginBottom: 14 }}>
           No existían límites ni fronteras,{' '}
           <span className="serif ital acc">solo la oportunidad de crear tu propio destino.</span>
         </h2>
-        <p className="lead" style={{ marginBottom: 56 }}>
+        <p className="lead reveal" style={{ marginBottom: 56 }}>
           Un recorrido de curiosidad, esfuerzo silencioso y saltos de fe.
         </p>
         <div style={{ maxWidth: 780 }}>
           {rows.map((r, i) => (
             <div
               key={r.year}
-              className="grid"
-              style={{ gridTemplateColumns: '88px 1fr', gap: 26 }}
+              className="grid reveal"
+              style={{ gridTemplateColumns: '88px 1fr', gap: 26, transitionDelay: `${i * 60}ms` }}
             >
               <div
                 className="acc"

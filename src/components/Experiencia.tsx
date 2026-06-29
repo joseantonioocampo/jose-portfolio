@@ -68,16 +68,16 @@ export default function Experiencia() {
   return (
     <section id="experiencia" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4">Experiencia</div>
-        <h2 className="h2" style={{ marginBottom: 48 }}>
+        <div className="eyebrow mb-4 reveal">Experiencia</div>
+        <h2 className="h2 reveal" style={{ marginBottom: 48 }}>
           Dónde he construido
         </h2>
         <div style={{ maxWidth: 840 }}>
-          {items.map((e) => (
+          {items.map((e, i) => (
             <div
               key={e.title + e.company}
-              className="card"
-              style={{ padding: '26px 28px', marginBottom: 14 }}
+              className="card reveal"
+              style={{ padding: '26px 28px', marginBottom: 14, transitionDelay: `${i * 55}ms` }}
             >
               <div className="flex justify-between flex-wrap gap-3" style={{ alignItems: 'baseline' }}>
                 <div>
@@ -99,15 +99,15 @@ export default function Experiencia() {
         </div>
 
         <div style={{ marginTop: 56 }}>
-          <div className="tag" style={{ marginBottom: 18 }}>
+          <div className="tag reveal" style={{ marginBottom: 18 }}>
             Capacidades
           </div>
           <div
             className="grid gap-6"
             style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}
           >
-            {capacidades.map((c) => (
-              <div key={c.label}>
+            {capacidades.map((c, i) => (
+              <div key={c.label} className="reveal" style={{ transitionDelay: `${i * 70}ms` }}>
                 <div className="serif" style={{ fontSize: 18, marginBottom: 12 }}>
                   {c.label}
                 </div>

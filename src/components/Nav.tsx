@@ -1,3 +1,5 @@
+import { useScrollSpy } from '../hooks/useScrollSpy';
+
 const links = [
   { href: '#historia', label: 'Historia' },
   { href: '#proyectos', label: 'Proyectos' },
@@ -9,6 +11,7 @@ const links = [
 ];
 
 export default function Nav() {
+  const active = useScrollSpy(links.map((l) => l.href.slice(1)));
   return (
     <nav
       style={{
@@ -30,7 +33,11 @@ export default function Nav() {
         </a>
         <div className="flex items-center gap-6 hidesm">
           {links.map((l) => (
-            <a key={l.href} href={l.href} className="navlink">
+            <a
+              key={l.href}
+              href={l.href}
+              className={`navlink${active === l.href.slice(1) ? ' active' : ''}`}
+            >
               {l.label}
             </a>
           ))}

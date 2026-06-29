@@ -13,12 +13,12 @@ export default function Educacion() {
   return (
     <section id="educacion" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4">Educación</div>
-        <h2 className="h2" style={{ marginBottom: 48 }}>
+        <div className="eyebrow mb-4 reveal">Educación</div>
+        <h2 className="h2 reveal" style={{ marginBottom: 48 }}>
           Formación
         </h2>
         <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
-          <div className="card" style={{ padding: 28 }}>
+          <div className="card reveal" style={{ padding: 28 }}>
             <span className="tag">2026 — Actualidad</span>
             <h3 className="serif" style={{ fontSize: 23, margin: '10px 0 4px' }}>
               Maestría en Business Analytics
@@ -30,7 +30,7 @@ export default function Educacion() {
               Negocio + datos: del modelo analítico a la decisión de alto impacto.
             </p>
           </div>
-          <div className="card" style={{ padding: 28 }}>
+          <div className="card reveal" style={{ padding: 28, transitionDelay: '90ms' }}>
             <span className="tag">2020 — 2024</span>
             <h3 className="serif" style={{ fontSize: 23, margin: '10px 0 4px' }}>
               Ing. en Mecatrónica, Robótica y Electrónica
@@ -45,7 +45,7 @@ export default function Educacion() {
           </div>
         </div>
 
-        <div style={{ marginTop: 44 }}>
+        <div className="reveal" style={{ marginTop: 44 }}>
           <div className="flex items-center gap-3" style={{ marginBottom: 14 }}>
             <span className="tag">Certificaciones</span>
             <span className="metric">16 en total</span>
@@ -59,7 +59,7 @@ export default function Educacion() {
           </div>
         </div>
 
-        <div style={{ marginTop: 36 }}>
+        <div className="reveal" style={{ marginTop: 36 }}>
           <div className="tag" style={{ marginBottom: 14 }}>
             Idiomas
           </div>

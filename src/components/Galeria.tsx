@@ -15,11 +15,11 @@ export default function Galeria() {
   return (
     <section id="galeria" className="sec">
       <div className="wrap">
-        <div className="eyebrow mb-4">Galería</div>
-        <h2 className="h2" style={{ marginBottom: 14 }}>
+        <div className="eyebrow mb-4 reveal">Galería</div>
+        <h2 className="h2 reveal" style={{ marginBottom: 14 }}>
           Momentos del camino
         </h2>
-        <p className="lead" style={{ marginBottom: 48 }}>
+        <p className="lead reveal" style={{ marginBottom: 48 }}>
           Sustituye cada placeholder por tu foto en <code>/public</code> y enlázala vía
           <code> src</code>.
         </p>
@@ -27,13 +27,15 @@ export default function Galeria() {
           className="grid gap-[18px]"
           style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}
         >
-          {items.map((g) => (
-            <div key={g.id}>
-              <Placeholder
-                label={g.label}
-                src={g.src}
-                style={{ width: '100%', height: 220 }}
-              />
+          {items.map((g, i) => (
+            <div key={g.id} className="reveal" style={{ transitionDelay: `${i * 70}ms` }}>
+              <div className="gphoto" style={{ height: 220 }}>
+                <Placeholder
+                  label={g.label}
+                  src={g.src}
+                  style={{ width: '100%', height: '100%' }}
+                />
+              </div>
               <div
                 className="muted"
                 style={{

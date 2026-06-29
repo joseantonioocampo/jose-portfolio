@@ -2,7 +2,7 @@ export default function Contacto() {
   return (
     <section id="contacto" className="sec">
       <div className="wrap">
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto' }}>
+        <div className="reveal" style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto' }}>
           <div className="eyebrow mb-4">Contacto</div>
           <h2 className="h1" style={{ fontSize: 'clamp(34px, 4.6vw, 56px)' }}>
             ¿Construimos algo <span className="serif ital acc">juntos?</span>
