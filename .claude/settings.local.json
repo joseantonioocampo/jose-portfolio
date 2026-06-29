@@ -22,7 +22,15 @@
       "Bash(pdftotext -layout \"public/mi-historia.pdf\" \"historia_tmp.txt\")",
       "Bash(rm -f historia_tmp.txt)",
       "Bash(git rm *)",
-      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Enriquecer contenido con la historia real + limpieza de repo *)"
+      "Bash(git -c user.email=hola.joyustudio@gmail.com -c 'user.name=Jose Antonio Ocampo' commit -m 'Enriquecer contenido con la historia real + limpieza de repo *)",
+      "Bash(pdfimages -all \"public/mi-historia.pdf\" pdf_imgs/img)",
+      "Bash(python -c \"import fitz; print\\('PyMuPDF', fitz.__doc__\\)\")",
+      "Bash(python -c \"import pypdf; print\\('pypdf ok'\\)\")",
+      "Bash(python -c \"import PIL; print\\('Pillow ok'\\)\")",
+      "Bash(python -m pip install --quiet PyMuPDF)",
+      "Bash(python -c \"import fitz; print\\('fitz', fitz.VersionBind\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(python -m pip install --quiet Pillow)"
     ]
   }
 }
